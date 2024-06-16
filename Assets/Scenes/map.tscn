@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=3 uid="uid://ce5ig56vlfj0e"]
 
-[ext_resource type="Script" path="res://Assets/Scenes/map.gd" id="1_5l1v8"]
+[ext_resource type="Script" path="res://Assets/Scripts/map.gd" id="1_5l1v8"]
 [ext_resource type="PackedScene" uid="uid://n4ouihvcwl8x" path="res://Assets/Scenes/Crosshair.tscn" id="1_kx8es"]
 [ext_resource type="Texture2D" uid="uid://cqkfkxfuybhv2" path="res://Assets/Sprites/cave.png" id="1_m0hn0"]
-[ext_resource type="PackedScene" uid="uid://gmiegjsuubuf" path="res://Assets/Scenes/Player.tscn" id="2_hij5v"]
+[ext_resource type="PackedScene" uid="uid://gmiegjsuubuf" path="res://Assets/Scripts/Player.tscn" id="2_hij5v"]
 [ext_resource type="PackedScene" uid="uid://br4ed6fh52lbm" path="res://Assets/Scenes/enemy.tscn" id="3_5u4d4"]
 [ext_resource type="Texture2D" uid="uid://henvhxokwhfo" path="res://Assets/Sprites/Overworld.png" id="3_tvrgo"]
 [ext_resource type="PackedScene" uid="uid://dei8s3aqv7k2a" path="res://Assets/Scenes/tunnel.tscn" id="7_vfao3"]
