@@ -1,0 +1,72 @@
+[gd_scene load_steps=8 format=3 uid="uid://gmiegjsuubuf"]
+
+[ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_okon1"]
+[ext_resource type="Texture2D" uid="uid://cnie8e3dmrp4x" path="res://Assets/Sprites/character.png" id="2_uyjut"]
+[ext_resource type="PackedScene" uid="uid://dp5n71klmnkrj" path="res://Assets/Scenes/gun.tscn" id="3_o2fu4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mvxkg"]
+radius = 7.92434
+height = 25.8487
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_unoov"]
+radius = 6.08276
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6bhtj"]
+bg_color = Color(1, 0, 0.0166664, 1)
+corner_radius_top_left = 45
+corner_radius_top_right = 45
+corner_radius_bottom_right = 45
+corner_radius_bottom_left = 45
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tuk6m"]
+bg_color = Color(1.8771e-06, 0.726489, 0.160805, 1)
+border_color = Color(5.77569e-07, 0.919205, 0.868395, 1)
+corner_radius_top_left = 45
+corner_radius_top_right = 45
+corner_radius_bottom_right = 45
+corner_radius_bottom_left = 45
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+top_level = true
+script = ExtResource("1_okon1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.0756559, -0.61621)
+scale = Vector2(1.21009, 0.952599)
+texture = ExtResource("2_uyjut")
+region_enabled = true
+region_rect = Rect2(0, 2.62095, 15.9364, 26.1613)
+
+[node name="Gun" parent="." instance=ExtResource("3_o2fu4")]
+position = Vector2(15, 2)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 371.949
+
+[node name="player_hitbox" type="Area2D" parent="."]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_hitbox"]
+position = Vector2(0.0756569, 0.383793)
+shape = SubResource("CapsuleShape2D_mvxkg")
+debug_color = Color(0.97775, 0, 0.401658, 0.42)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 7)
+shape = SubResource("CircleShape2D_unoov")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -13.0
+offset_top = -14.0
+offset_right = -9.0
+offset_bottom = 13.0
+rotation = -1.57019
+theme_override_styles/background = SubResource("StyleBoxFlat_6bhtj")
+theme_override_styles/fill = SubResource("StyleBoxFlat_tuk6m")
+max_value = 5.0
+step = 0.1
+value = 5.0
+fill_mode = 2
+show_percentage = false
+
+[connection signal="player_no_health" from="." to="." method="_on_player_no_health"]

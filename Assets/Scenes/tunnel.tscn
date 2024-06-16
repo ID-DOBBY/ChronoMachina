@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dei8s3aqv7k2a"]
+
+[ext_resource type="Texture2D" uid="uid://cqkfkxfuybhv2" path="res://Assets/Sprites/cave.png" id="1_xl31j"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6d3cg"]
+radius = 14.0606
+height = 28.1212
+
+[node name="Tunnel" type="Sprite2D"]
+position = Vector2(4.76837e-07, 4.76837e-07)
+scale = Vector2(0.568965, 0.62)
+texture = ExtResource("1_xl31j")
+region_enabled = true
+region_rect = Rect2(113, 85, 29, 25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-8.38077e-07, 0)
+shape = SubResource("CapsuleShape2D_6d3cg")
