@@ -17,3 +17,6 @@ position = Vector2(-15, -2)
 
 [node name="Bullet_Spawn" type="Marker2D" parent="."]
 position = Vector2(6, -2)
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
