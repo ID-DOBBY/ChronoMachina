@@ -16,7 +16,7 @@ func _ready():
 	get_tree().paused = false
 	
 
-func _process(delta):
+func _process(_delta):
 	
 	var ammo_label = camera.get_child(0).get_child(0)
 	var text = "AMMO: " + str(%Player/Gun.ammo)
@@ -41,10 +41,10 @@ func _process(delta):
 			camera.global_position = %Player.global_position
 			camera.position_smoothing_enabled = true
 	
-func _on_room_2_area_entered(area):
+func _on_room_2_area_entered(_area):
 	current_room = 2
 	
-func _on_room_1_area_entered(area):
+func _on_room_1_area_entered(_area):
 	current_room = 1
 
 

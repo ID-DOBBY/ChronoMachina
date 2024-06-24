@@ -3,12 +3,12 @@ var distance =0.0
 func _physics_process(delta):
 	var direction = Vector2.RIGHT.rotated(rotation)
 	var speed = 160
-	var range = 200
+	var traverse_range = 200
 	position += speed*direction*delta
 	
 	
 	distance += speed*delta
-	if distance > range:
+	if distance > traverse_range:
 		queue_free()
 	
 	

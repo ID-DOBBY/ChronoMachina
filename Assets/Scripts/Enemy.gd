@@ -18,19 +18,5 @@ func _physics_process(_delta):
 	
 	move_and_slide()
 	
-
-	
-
 func _on_no_health():
 	queue_free()
-
-
-
-
-
-func _on_hitbox_body_entered(body):
-	pass
-
-
-func _on_hitbox_area_entered(area):
-	pass
