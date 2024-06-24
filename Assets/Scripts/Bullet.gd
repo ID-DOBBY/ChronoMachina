@@ -1,5 +1,4 @@
 extends Node2D
-@onready var crosshair = get_node("/root/Map/crosshair")
 var distance =0.0
 func _physics_process(delta):
 	var direction = Vector2.RIGHT.rotated(rotation)

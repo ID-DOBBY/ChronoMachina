@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ce5ig56vlfj0e"]
+[gd_scene load_steps=17 format=3 uid="uid://ce5ig56vlfj0e"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/map.gd" id="1_5l1v8"]
 [ext_resource type="PackedScene" uid="uid://n4ouihvcwl8x" path="res://Assets/Scenes/Crosshair.tscn" id="1_kx8es"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://br4ed6fh52lbm" path="res://Assets/Scenes/enemy.tscn" id="3_5u4d4"]
 [ext_resource type="Texture2D" uid="uid://henvhxokwhfo" path="res://Assets/Sprites/Overworld.png" id="3_tvrgo"]
 [ext_resource type="PackedScene" uid="uid://q57gds7a7qbs" path="res://Assets/Scenes/camera.tscn" id="5_knklm"]
+[ext_resource type="PackedScene" uid="uid://cy4nimgvvmld0" path="res://Assets/Scenes/hud.tscn" id="6_hwd6e"]
+[ext_resource type="Script" path="res://Assets/Scripts/player-improved.gd" id="7_bi37g"]
 [ext_resource type="PackedScene" uid="uid://dei8s3aqv7k2a" path="res://Assets/Scenes/tunnel.tscn" id="7_vfao3"]
 
 [sub_resource type="Curve2D" id="Curve2D_kld4h"]
@@ -3505,27 +3507,10 @@ layer_0/tile_data = PackedInt32Array(-65536, 0, 0, -1, 458752, 3, -2, 458752, 3,
 
 [node name="Camera2D" parent="TileMap" instance=ExtResource("5_knklm")]
 offset = Vector2(0, 8)
-zoom = Vector2(4, 4)
 
-[node name="Player" parent="." instance=ExtResource("2_hij5v")]
-unique_name_in_owner = true
-position = Vector2(0, 26)
+[node name="HUD" parent="TileMap/Camera2D" instance=ExtResource("6_hwd6e")]
 
 [node name="crosshair" parent="." instance=ExtResource("1_kx8es")]
-
-[node name="Enemies" type="Node2D" parent="."]
-
-[node name="Enemy2" parent="Enemies" groups=["Enemies"] instance=ExtResource("3_5u4d4")]
-position = Vector2(-81, -25)
-
-[node name="Enemy" parent="Enemies" instance=ExtResource("3_5u4d4")]
-position = Vector2(67, -31)
-
-[node name="Enemy3" parent="Enemies" instance=ExtResource("3_5u4d4")]
-position = Vector2(60, 45)
-
-[node name="Enemy4" parent="Enemies" instance=ExtResource("3_5u4d4")]
-position = Vector2(-66, 28)
 
 [node name="Room2" type="Area2D" parent="."]
 position = Vector2(-5, 0)
@@ -3545,5 +3530,25 @@ shape = SubResource("RectangleShape2D_isk5p")
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
+[node name="Player" parent="." instance=ExtResource("2_hij5v")]
+unique_name_in_owner = true
+position = Vector2(0, 26)
+script = ExtResource("7_bi37g")
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Enemy2" parent="Enemies" groups=["Enemies"] instance=ExtResource("3_5u4d4")]
+position = Vector2(-81, -25)
+
+[node name="Enemy" parent="Enemies" instance=ExtResource("3_5u4d4")]
+position = Vector2(67, -31)
+
+[node name="Enemy3" parent="Enemies" instance=ExtResource("3_5u4d4")]
+position = Vector2(60, 45)
+
+[node name="Enemy4" parent="Enemies" instance=ExtResource("3_5u4d4")]
+position = Vector2(-66, 28)
+
 [connection signal="area_entered" from="Room2" to="." method="_on_room_2_area_entered"]
 [connection signal="area_entered" from="Room1" to="." method="_on_room_1_area_entered"]
+[connection signal="player_no_health" from="Player" to="." method="_on_player_player_no_health"]

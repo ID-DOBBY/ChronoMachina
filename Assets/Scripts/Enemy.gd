@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@onready var player = get_node("/root/Map/Player")
+@onready var player = get_node("/root/Main/Map/Player")
 const SPEED = 40
 var health = 2
 signal no_health

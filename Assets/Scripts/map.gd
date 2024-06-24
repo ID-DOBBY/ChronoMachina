@@ -8,11 +8,12 @@ var current_room = 1
 const ENEMY = preload("res://Assets/Scenes/enemy.tscn")
 @onready var spawn_pos = $Path2D/spawn_pos
 @onready var timer = $Timer
-
+const GAME_OVER = preload("res://Assets/Scenes/game_over.tscn")
 
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	get_tree().paused = false
 	
 
 func _process(delta):
@@ -40,17 +41,35 @@ func _process(delta):
 			camera.global_position = %Player.global_position
 			camera.position_smoothing_enabled = true
 	
-	
-	
-		
-		
-
-
 func _on_room_2_area_entered(area):
 	current_room = 2
 	
-	
-
-
 func _on_room_1_area_entered(area):
 	current_room = 1
+
+
+
+func _on_player_player_no_health():
+	camera.add_child(GAME_OVER.instantiate())
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

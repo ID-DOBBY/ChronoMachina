@@ -20,6 +20,10 @@ func _physics_process(delta):
 		
 	health_bar.value = health
 
+	if Input.is_action_just_pressed("roll"):
+			velocity = SPEED*direction*2000
+		
+
 
 
 

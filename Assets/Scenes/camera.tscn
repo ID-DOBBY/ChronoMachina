@@ -1,17 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://q57gds7a7qbs"]
-
-[ext_resource type="FontFile" uid="uid://dbjl1e6kdxpl6" path="res://Assets/Fonts/PixelOperator8.ttf" id="1_ymcw4"]
+[gd_scene format=3 uid="uid://q57gds7a7qbs"]
 
 [node name="Camera2D" type="Camera2D"]
-
-[node name="Hud" type="CanvasLayer" parent="."]
-layer = 5
-follow_viewport_enabled = true
-
-[node name="Ammo Count" type="Label" parent="Hud"]
-offset_left = -143.0
-offset_top = 68.0
-offset_right = -92.0
-offset_bottom = 91.0
-theme_override_fonts/font = ExtResource("1_ymcw4")
-theme_override_font_sizes/font_size = 8
+zoom = Vector2(4, 4)
