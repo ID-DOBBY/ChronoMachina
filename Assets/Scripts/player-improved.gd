@@ -22,7 +22,7 @@ const ROLL_SPEED = 10000
 var can_roll = true
 var roll_dir
 
-func _process(delta):
+func _process(_delta):
 	var direction = Input.get_vector("move_left","move_right","move_up","move_down")
 	
 	if direction == Vector2.ZERO and roll_timer.is_stopped() == true:
@@ -74,8 +74,8 @@ func _physics_process(delta):
 		health-= 1.5*delta*overlapping_bodies.size()
 	
 	
-func roll(delta,roll_dir):
-	velocity = ROLL_SPEED*roll_dir*delta
+func roll(delta, direction):
+	velocity = ROLL_SPEED*direction*delta
 	move_and_slide()
 
 func idle():

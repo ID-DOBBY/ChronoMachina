@@ -3,7 +3,7 @@ extends Node2D
 @onready var timer = $Timer
 @onready var crosshair = get_node("/root/Main/Map/crosshair")
 const BULLET = preload("res://Assets/Scenes/bullet.tscn")
-@onready var rotation_point = $Rotation_Point
+
 var ammo = 6
 var fireRate = 0.7
 var reloadTime = 1.2
