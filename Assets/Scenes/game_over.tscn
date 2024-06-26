@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://b551vphjvswb4"]
 
+[ext_resource type="Script" path="res://Assets/Scripts/game_over.gd" id="1_dv0tl"]
 [ext_resource type="FontFile" uid="uid://c53kogtyjwsss" path="res://Assets/Fonts/PixelOperator8-Bold.ttf" id="1_pwfag"]
-[ext_resource type="Script" path="res://Assets/Scenes/game_over.gd" id="1_qxr7t"]
 
 [node name="Game Over" type="CanvasLayer"]
 process_mode = 3
-script = ExtResource("1_qxr7t")
+script = ExtResource("1_dv0tl")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -35,6 +35,7 @@ theme_override_font_sizes/font_size = 64
 text = "GAME OVER"
 
 [node name="Button" type="Button" parent="ColorRect"]
+layout_mode = 0
 offset_left = 540.0
 offset_top = 386.0
 offset_right = 605.0

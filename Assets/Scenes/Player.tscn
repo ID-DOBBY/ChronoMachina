@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://gmiegjsuubuf"]
 
-[ext_resource type="Script" path="res://Assets/Scripts/CharacterBody2D.gd" id="1_okon1"]
-[ext_resource type="Texture2D" uid="uid://cnie8e3dmrp4x" path="res://Assets/Sprites/character.png" id="2_uyjut"]
+[ext_resource type="Script" path="res://Assets/Scripts/player-improved.gd" id="1_n7lca"]
+[ext_resource type="Texture2D" uid="uid://cnie8e3dmrp4x" path="res://Assets/Sprites/character.png" id="2_nrv5h"]
 [ext_resource type="PackedScene" uid="uid://dp5n71klmnkrj" path="res://Assets/Scenes/gun.tscn" id="3_o2fu4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mvxkg"]
@@ -28,30 +28,29 @@ corner_radius_bottom_left = 45
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 top_level = true
-script = ExtResource("1_okon1")
+script = ExtResource("1_n7lca")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0.0756559, -0.61621)
-scale = Vector2(1.21009, 0.952599)
-texture = ExtResource("2_uyjut")
+position = Vector2(0, -1)
+texture = ExtResource("2_nrv5h")
 region_enabled = true
-region_rect = Rect2(0, 2.62095, 15.9364, 26.1613)
+region_rect = Rect2(1, 6, 15, 20)
 
 [node name="Gun" parent="." instance=ExtResource("3_o2fu4")]
-position = Vector2(15, 2)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 371.949
+wait_time = 0.3
+one_shot = true
+autostart = true
 
 [node name="player_hitbox" type="Area2D" parent="."]
 unique_name_in_owner = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player_hitbox"]
-position = Vector2(0.0756569, 0.383793)
 shape = SubResource("CapsuleShape2D_mvxkg")
 debug_color = Color(0.97775, 0, 0.401658, 0.42)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Collider" type="CollisionShape2D" parent="."]
 position = Vector2(0, 7)
 shape = SubResource("CircleShape2D_unoov")
 
@@ -68,5 +67,8 @@ step = 0.1
 value = 5.0
 fill_mode = 2
 show_percentage = false
+
+[node name="Roll-cooldown" type="Timer" parent="."]
+one_shot = true
 
 [connection signal="player_no_health" from="." to="." method="_on_player_no_health"]

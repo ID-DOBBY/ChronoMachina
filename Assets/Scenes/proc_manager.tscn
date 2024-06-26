@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dimxknlo0p6ib"]
+
+[ext_resource type="Script" path="res://ProcGen.gd" id="1_prdf8"]
+[ext_resource type="TileSet" uid="uid://dgotgp85pb0lw" path="res://Assets/Sprites/Cave_Tile_set.tres" id="2_pe0hq"]
+
+[node name="Proc_manager" type="Node2D"]
+script = ExtResource("1_prdf8")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("2_pe0hq")
+format = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]

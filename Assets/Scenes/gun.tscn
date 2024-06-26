@@ -7,16 +7,14 @@
 script = ExtResource("1_1jvs3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(13, 0)
 scale = Vector2(1.11538, 1.13636)
 texture = ExtResource("1_jrc5o")
 region_enabled = true
 region_rect = Rect2(8.97222, 1.49355, 13.2754, 11.9696)
 
-[node name="Rotation_Point" type="Marker2D" parent="."]
-position = Vector2(-15, -2)
-
 [node name="Bullet_Spawn" type="Marker2D" parent="."]
-position = Vector2(6, -2)
+position = Vector2(18, -2)
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
