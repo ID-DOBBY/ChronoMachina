@@ -7,8 +7,8 @@ radius = 14.0606
 height = 28.1212
 
 [node name="Tunnel" type="Sprite2D"]
-position = Vector2(4.76837e-07, 4.76837e-07)
-scale = Vector2(0.568965, 0.62)
+position = Vector2(1.19209e-07, 0)
+scale = Vector2(0.698276, 0.71)
 texture = ExtResource("1_xl31j")
 region_enabled = true
 region_rect = Rect2(113, 85, 29, 25)
